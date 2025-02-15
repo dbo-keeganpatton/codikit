@@ -23,7 +23,7 @@ export default function Home() {
         yuvark snectober thraalpen dromix quelbark wintrophle.
         </p>
 
-
+        <button className={styles.button}> Sign Up </button>
     </main>
     
     );
