@@ -1,11 +1,14 @@
-.ltr {
-    text-align: left;
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
 }
 
-.rtl {
-    text-align: right;
+.main .h1 {
+    color: white;
 }
-
 
 .editorContainer {
     display: flex;
