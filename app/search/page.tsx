@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import styles from "./search.module.css"
 import { Box, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import { Paper } from '@mui/material'
 import { TextField } from '@mui/material'
@@ -20,6 +21,7 @@ function tableData (
    return {title, author, genre, createDate, lastModified, uid}
 }
 
+
 const createTableRows = [
   tableData("Summer Evil", "Remy Johan", "Horror", "2025-01-01", "2025-01-05", 123),
   tableData("A Lost Affair", "Lucy Deville", "Romance", "2024-09-21", "2025-01-02", 298),
@@ -28,24 +30,26 @@ const createTableRows = [
 ]
 
 
-
-
-
-
 const search = () => {
   return (
   
   <main>
     
-    {/* Main Search Bar */}
+    {/************************
+     !    Main Search Bar    !
+     ************************/}
      <Box component="form" autoComplete="on">
-       <TextField id="filled-basic" label="Search" variant="filled" />
+       <TextField id="filled-basic" label="Search" variant="filled" className={styles.searchBar}/>
      </Box>
-     
-     <TableContainer component={Paper}>
+    
+    
+    {/************************
+     !      Center Table     !
+     ************************/}
+     <TableContainer component={Paper} className={styles.mainTable}>
         <Table sx={{ minWidth: 650 }}>
         
-           <TableHead>
+           <TableHead className={styles.mainTableHeaderStyle}>
               <TableRow>
                 <TableCell>Title</TableCell>
                 <TableCell>Author</TableCell>
@@ -56,7 +60,7 @@ const search = () => {
               </TableRow>
             </TableHead>
    
-            <TableBody>
+            <TableBody className={styles.mainTableRowStyle}>
                {createTableRows.map((row) => (
                   <TableRow
                      key={row.title}
