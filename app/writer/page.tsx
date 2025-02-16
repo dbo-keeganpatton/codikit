@@ -23,19 +23,21 @@ const Writer = () => {
   
 return (
     
-    <div className={styles.editorContainer}>
-
     <LexicalComposer initialConfig={initialConfig}>
-      <RichTextPlugin 
-        contentEditable={<ContentEditable className={styles.editorParagraph} />}
-        placeholder={<div className={styles.editorPlaceholder}> Start Writing! </div>}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
-      <HistoryPlugin />
-      <AutoFocusPlugin />
+   
+        <div className={styles.editorContainer}>
+        
+            <RichTextPlugin 
+                contentEditable={<ContentEditable className={styles.editorParagraph} />}
+                placeholder={<div className={styles.editorPlaceholder}> Start Writing! </div>}
+                ErrorBoundary={LexicalErrorBoundary}
+            />
+            <HistoryPlugin />
+            <AutoFocusPlugin />
+        
+        </div> 
+    
     </LexicalComposer>
-  
-   </div>
   
   );
 };

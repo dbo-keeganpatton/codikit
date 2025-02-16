@@ -17,9 +17,6 @@
 .editorPlaceholder {
      color: white;
      overflow: hidden;
-     position: absolute;
-     top: 15px;
-     left: 15px;
      user-select: none;
      pointer-events: none;
 }
@@ -27,8 +24,8 @@
 .editorParagraph {
      color: white;
      margin: 0 0 15px 0;
-     position: relative;
-     border-color: #393445;
+     outline: 2px solid #393445;
+     padding: 10px;
 }
 
 
