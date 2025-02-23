@@ -33,16 +33,37 @@ const createTableRows = [
 const search = () => {
   return (
   
-  <main>
+  <main className={styles.main}>
     
     {/************************
      !    Main Search Bar    !
      ************************/}
      <Box component="form" autoComplete="on">
-       <TextField id="filled-basic" label="Search" variant="filled" className={styles.searchBar}/>
-     </Box>
-    
-    
+        <TextField 
+           id="filled-basic" 
+           label="Search" 
+           variant="filled" 
+           sx={{
+              '& .MuiInputBase-input': {
+                color: 'white',
+              },
+              '& .MuiInputLabel-root': {  
+                color: 'white'
+              },
+              '& .MuiFilledInput-underline:before': {  
+                borderBottomColor: 'white',
+              },
+              '& .MuiFilledInput-underline:after': {  
+                borderBottomColor: 'white',
+              },
+              '& .MuiInputBase-input::placeholder': {
+                color: 'white',
+                opacity: 1,  
+              },
+           }}
+        />
+    </Box>    
+
     {/************************
      !      Center Table     !
      ************************/}
@@ -51,12 +72,12 @@ const search = () => {
         
            <TableHead className={styles.mainTableHeaderStyle}>
               <TableRow>
-                <TableCell>Title</TableCell>
-                <TableCell>Author</TableCell>
-                <TableCell>Genre</TableCell>
-                <TableCell>Date Created</TableCell>
-                <TableCell>Last Modified</TableCell>
-                <TableCell>Story ID</TableCell>
+                <TableCell align='center'>Title</TableCell>
+                <TableCell align='center'>Author</TableCell>
+                <TableCell align='center'>Genre</TableCell>
+                <TableCell align='center'>Date Created</TableCell>
+                <TableCell align='center'>Last Modified</TableCell>
+                <TableCell align='center'>Story ID</TableCell>
               </TableRow>
             </TableHead>
    
@@ -67,11 +88,11 @@ const search = () => {
                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                      <TableCell component="th" scope="row">{row.title}</TableCell>
-                     <TableCell align="right">{row.author}</TableCell>
-                     <TableCell align="right">{row.genre}</TableCell>
-                     <TableCell align="right">{row.createDate}</TableCell>
-                     <TableCell align="right">{row.lastModified}</TableCell>
-                     <TableCell align="right">{row.uid}</TableCell>
+                     <TableCell align='center'>{row.author}</TableCell>
+                     <TableCell align='center'>{row.genre}</TableCell>
+                     <TableCell align='center'>{row.createDate}</TableCell>
+                     <TableCell align='center'>{row.lastModified}</TableCell>
+                     <TableCell align='center'>{row.uid}</TableCell>
                  </TableRow>
               ))}
             </TableBody>
