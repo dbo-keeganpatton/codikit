@@ -1,5 +1,9 @@
 /* Camel Case Only for Class Names */
 
+.mainParent {
+    display: flex;
+    flex-direction: row;
+}
 
 .main {
     display: flex;
