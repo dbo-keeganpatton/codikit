@@ -21,7 +21,19 @@ export default function TemporaryDrawer() {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+    
+    <Box 
+     /* Control Main Styles of Sidebar Here */
+       sx={{ 
+           width: 250,
+           height: '100vh',
+           color: 'white',
+           backgroundColor: '#29292a' 
+       }} 
+       role="presentation" 
+       onClick={toggleDrawer(false)}
+      >
+
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -34,7 +46,9 @@ export default function TemporaryDrawer() {
           </ListItem>
         ))}
       </List>
+      
       <Divider />
+      
       <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -47,7 +61,9 @@ export default function TemporaryDrawer() {
           </ListItem>
         ))}
       </List>
+    
     </Box>
+  
   );
 
   return (
