@@ -7,6 +7,7 @@ import { Paper } from '@mui/material'
 import { TextField } from '@mui/material'
 import { Table } from '@mui/material'
 import { TableContainer } from '@mui/material'
+import TemporaryDrawer from '@/components/sideBar'
 
 
 
@@ -32,7 +33,13 @@ const createTableRows = [
 
 const search = () => {
   return (
-  
+    
+  <div className={styles.mainParent}>
+   
+   {/* This is the side bar component */}
+   <TemporaryDrawer />     
+
+ 
   <main className={styles.main}>
     
     {/************************
@@ -102,7 +109,7 @@ const search = () => {
      
    
   </main>
-
+  </div>
 
     );
 };

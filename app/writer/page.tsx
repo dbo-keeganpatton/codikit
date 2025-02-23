@@ -8,6 +8,9 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
+import TemporaryDrawer from '@/components/sideBar'
+
+
 
 function onError(error: Error) {
   console.error(error);
@@ -25,7 +28,12 @@ const Writer = () => {
 !            Core UI Starts Here               !
 ***********************************************/
 return (
-    
+   
+   <div className={styles.mainParent}>
+   
+   {/* This is the side bar component */}
+   <TemporaryDrawer />     
+
    <main className={styles.main}>
        
        <h1 className={styles.h1}> Editing Nook </h1>
@@ -49,7 +57,7 @@ return (
         {/* Lexical Text Editor End  */} 
 
    </main>
-
+   </div>
     );
 };
 

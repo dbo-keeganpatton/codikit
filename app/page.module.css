@@ -3,6 +3,8 @@
 .mainParent {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    gap: 31%;
 }
 
 .main {
