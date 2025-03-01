@@ -7,18 +7,45 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import EditNoteIcon from '@mui/icons-material/EditNote';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import CabinIcon from '@mui/icons-material/Cabin';
 import Image from "next/image";
+import Link from 'next/link';
+
 
 
 
 export default function TemporaryDrawer() {
   const [open, setOpen] = React.useState(false);
 
+
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
+
+
+  const pageRoutes = [
+    { text: 'Editor', href: '/editor' },
+    { text: 'Stories', href: '/search' },
+    { text: 'Home', href: '/' }
+  ]
+   
+
+  const mapIcons = (index: number) => {
+    if (index === 0) {
+      return <EditNoteIcon style={{color: "white"}} />;
+    
+    } else if (index === 1) {
+        return <AutoStoriesIcon style={{color: "white"}}/>;
+    
+    } else {
+        return <CabinIcon style={{color: "white"}}/>; 
+    }
+     
+  };
+
+
 
   const DrawerList = (
     
@@ -35,13 +62,11 @@ export default function TemporaryDrawer() {
       >
 
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+        {pageRoutes.map((item, index) => (
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton component={Link} href={item.href}>
+              <ListItemIcon> {mapIcons(index)}</ListItemIcon>
+              <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -49,19 +74,6 @@ export default function TemporaryDrawer() {
       
       <Divider />
       
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    
     </Box>
   
   );

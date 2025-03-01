@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CodiKit",
+  title: "CoRyte",
   description: "App for Collaborative Storytelling",
 };
 

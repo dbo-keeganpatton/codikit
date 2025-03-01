@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react'; 
-import styles from './writer.module.css'
+import styles from './editor.module.css'
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
