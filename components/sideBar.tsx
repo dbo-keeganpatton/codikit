@@ -84,8 +84,8 @@ export default function TemporaryDrawer() {
       
       <Image
          src="/burger-menu-left-svgrepo-com.svg"
-         width={65}
-         height={65}
+         width={45}
+         height={45}
          alt="Click to Expand Menu"
          onClick={toggleDrawer(true)}
          className="absolute left-0" 

@@ -29,36 +29,41 @@ const Writer = () => {
 ***********************************************/
 return (
    
-   <div className={styles.mainParent}>
+   <div>
+
+      {/* This is the side bar component */}
+      <TemporaryDrawer />     
+         
+         <div className={styles.mainParent}>
    
-   {/* This is the side bar component */}
-   <TemporaryDrawer />     
 
-   <main className={styles.main}>
-       
-       <h1 className={styles.h1}> Editing Nook </h1>
+           <h1 className={styles.h1}> Editing Nook </h1>
+           <main className={styles.main}>
+               
 
-        {/* Lexical Text Editor Start */}      
-        <LexicalComposer initialConfig={initialConfig}>
-       
-            <div className={styles.editorContainer}>
-            
-                <RichTextPlugin 
-                    contentEditable={<ContentEditable className={styles.editorParagraph} />}
-                    placeholder={<div className={styles.editorPlaceholder}> Start Writing! </div>}
-                    ErrorBoundary={LexicalErrorBoundary}
-                />
-                <HistoryPlugin />
-                <AutoFocusPlugin />
-            
-            </div> 
+                {/* Lexical Text Editor Start */}      
+                <LexicalComposer initialConfig={initialConfig}>
+               
+                    <div className={styles.editorContainer}>
+                    
+                        <RichTextPlugin 
+                            contentEditable={<ContentEditable className={styles.editorParagraph} />}
+                            placeholder={<div className={styles.editorPlaceholder}> Start Writing! </div>}
+                            ErrorBoundary={LexicalErrorBoundary}
+                        />
+                        <HistoryPlugin />
+                        <AutoFocusPlugin />
+                    
+                    </div> 
+                
+                </LexicalComposer>
+                {/* Lexical Text Editor End  */} 
+
+           </main>
         
-        </LexicalComposer>
-        {/* Lexical Text Editor End  */} 
-
-   </main>
+        </div>
    </div>
-    );
+   );
 };
 
 export default Writer;
