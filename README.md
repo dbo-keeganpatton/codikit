@@ -7,10 +7,10 @@
 
 
 ## ToDo
-# Editor
+### Editor
 - Markdown Mode
 - Toolbar
 
-# Deployment
+### Deployment
 - CICD
 ![cicd dag](./public/cicd.png)
