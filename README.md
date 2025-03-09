@@ -10,3 +10,7 @@
 # Editor
 - Markdown Mode
 - Toolbar
+
+# Deployment
+- CICD
+![cicd dag](./public/cicd.png)
