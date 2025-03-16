@@ -24,7 +24,7 @@ function onError(error: Error) {
   console.error(error);
 }
 
-const MainEditor = () => {
+const MdMainEditor = () => {
   const initialConfig = {
     namespace: 'MyEditor',
     onError,
@@ -54,11 +54,12 @@ const MainEditor = () => {
         {/* Lexical Plugins */}
         <HistoryPlugin />
         <AutoFocusPlugin />
+        <MarkdownShortcutPlugin transformers={DEFAULT_TRANSFORMERS}/>
 
       </div>
     </LexicalComposer>
   );
 };
 
-export default MainEditor;
+export default MdMainEditor;
 

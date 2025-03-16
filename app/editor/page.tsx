@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import styles from './editor.module.css'
 import TemporaryDrawer from '@/components/sideBar'
 import MainEditor from '@/components/editorGui'; 
-// MarkDown Parser
-import Markdown from 'react-markdown';
+import MdMainEditor from '@/components/mdEditorGui';
+
 
 
 
@@ -13,6 +13,9 @@ import Markdown from 'react-markdown';
 !            Core UI Starts Here               !
 ***********************************************/
 const editorPage = () => {
+   
+   const [buttonDefault, buttonClicked] = useState(true);
+
    return (
    
        <div>
@@ -26,9 +29,28 @@ const editorPage = () => {
                <h1 className={styles.h1}> Editing Nook </h1>
                <main className={styles.main}>
                  
-                 {/* This is the Editor Component */}
-                  <MainEditor />
+                 <div>
+
+                    {/*********************************************
+                                    Editor Tool Bar
+                    ***********************************************/}
+                    <div className={styles.editorToolbarContainer}>
                     
+                       <button
+                       className={styles.editorToolbarItem}
+                       onClick={() => buttonClicked((prev) => !prev)}
+                       >
+                       Markdown Mode
+                       </button>
+                    
+                    </div>
+
+                    {/*********************************************
+                                    Editor States
+                    ***********************************************/}
+                    {buttonDefault ? <MainEditor /> : <MdMainEditor />} 
+                 
+                 </div>   
                </main>
             
             </div>

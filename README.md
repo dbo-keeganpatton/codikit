@@ -8,9 +8,16 @@
 
 ## ToDo
 ### Editor
-- Markdown Mode
-- Toolbar
+- Toolbar:
+    - Code Snippet language selection
+- Save editor state when toggling between modes
+
 
 ### Deployment
 - CICD
 ![cicd dag](./public/cicd.png)
+
+
+## Done
+- -Markdown Mode-
+
