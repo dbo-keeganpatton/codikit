@@ -19,5 +19,5 @@
 
 
 ## Done
-- -Markdown Mode-
+- ~~Markdown Mode~~
 
