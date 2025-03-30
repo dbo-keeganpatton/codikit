@@ -22,10 +22,10 @@ export default function signup () {
                 className={styles.treeImage}
             />
            
-            <Form action="/">
-                <input name="User Name"/>
-                <input name="Password"/>
-                <input name="Confirm Password"/>
+            <Form action="/" className={styles.signupForm}>
+                <input name="User Name" placeholder="User Name"/>
+                <input name="Password" placeholder="Password" type="password"/>
+                <input name="Confirm Password" placeholder="Confirm Password" type="password"/>
                 <button type="submit">Create Account</button>
             </Form>
 
