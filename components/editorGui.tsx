@@ -1,4 +1,5 @@
 import React from 'react';
+import 'prismjs/themes/prism.css';
 import styles from '../app/editor/editor.module.css';  
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
@@ -8,7 +9,7 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin';
 import { DEFAULT_TRANSFORMERS } from '@lexical/react/LexicalMarkdownShortcutPlugin';
-
+import { CodeHighlightPlugin } from '@lexical/react/LexicalCodeHighlightPlugin';
 
 // Nodes for Markdown Features
 import { HeadingNode } from '@lexical/rich-text';
@@ -18,7 +19,7 @@ import { ListNode } from '@lexical/list';
 import { ListItemNode } from '@lexical/list';
 import { CodeNode } from '@lexical/code';
 import { LinkNode } from '@lexical/link';
-
+import { CodeHighlightNode } from '@lexical/code';
 
 function onError(error: Error) {
   console.error(error);
@@ -38,6 +39,7 @@ const MainEditor = () => {
        ListItemNode,
        CodeNode,
        LinkNode,
+       CodeHighlightNode 
     ]
   
   };
@@ -54,7 +56,8 @@ const MainEditor = () => {
         {/* Lexical Plugins */}
         <HistoryPlugin />
         <AutoFocusPlugin />
-
+        <MarkdownShortcutPlugin transformers={DEFAULT_TRANSFORMERS} />
+      
       </div>
     </LexicalComposer>
   );

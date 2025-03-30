@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import TemporaryDrawer from '@/components/sideBar'
+import Link from "next/link";
 
 
 export default function Home() {
@@ -31,8 +32,12 @@ export default function Home() {
             teldran whimpix grostule vathend marclen spivyok jundrelth. Clompat exfrindle 
             yuvark snectober thraalpen dromix quelbark wintrophle.
             </p>
-
+            
+            <Link href="/signup">
             <button className={styles.button}> Sign Up </button>
+            </Link>
+
+
         </main>
     
     </div>

@@ -1,0 +1,38 @@
+/* Camel Case Only for Class Names */
+
+.mainParent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 31%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+}
+
+.main .p {
+    color: white;
+}
+
+
+.main .button {
+    height: 50px;
+    width: 200px;
+}
+
+.indexHeader {
+    color: white;
+}
+
+
+.treeImage {
+    opacity: 0.1;
+    z-index: -1;
+    filter: blur(5px);
+    box-shadow: 0 200px 200px #18161b inset;
+}
