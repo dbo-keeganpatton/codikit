@@ -18,14 +18,22 @@ import { ListNode } from '@lexical/list';
 import { ListItemNode } from '@lexical/list';
 import { CodeNode } from '@lexical/code';
 import { LinkNode } from '@lexical/link';
-
+import { useState } from 'react';
 
 function onError(error: Error) {
   console.error(error);
 }
 
+
+
+
+
 const MdMainEditor = () => {
-  const initialConfig = {
+
+
+    const [isSelected, setIsSelected] = useState(true);
+    
+    const initialConfig = {
     namespace: 'MyEditor',
     onError,
 
@@ -43,8 +51,20 @@ const MdMainEditor = () => {
   };
 
   return (
+    
+
     <LexicalComposer initialConfig={initialConfig}>
-      <div className={styles.editorContainer}>
+        
+        <div className={styles.editorToolbarContainer}>     
+        <button
+            className={styles.editorToolbarItem}
+            onClick={() => setIsSelected((prev) => !prev)}
+            >
+            Markdown Mode
+        </button>
+        </div>
+        
+        <div className={styles.editorContainer}>
         <RichTextPlugin
           contentEditable={<ContentEditable className={styles.editorParagraph} />}
           placeholder={<div className={styles.editorPlaceholder}>Start Writing!</div>}
@@ -54,7 +74,8 @@ const MdMainEditor = () => {
         {/* Lexical Plugins */}
         <HistoryPlugin />
         <AutoFocusPlugin />
-        <MarkdownShortcutPlugin transformers={DEFAULT_TRANSFORMERS}/>
+        {isSelected ? <MarkdownShortcutPlugin transformers={DEFAULT_TRANSFORMERS}/> : null }
+
 
       </div>
     </LexicalComposer>

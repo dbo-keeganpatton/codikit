@@ -3,7 +3,6 @@
 import React, { useState } from 'react'; 
 import styles from './editor.module.css'
 import TemporaryDrawer from '@/components/sideBar'
-import MainEditor from '@/components/editorGui'; 
 import MdMainEditor from '@/components/mdEditorGui';
 
 
@@ -14,8 +13,6 @@ import MdMainEditor from '@/components/mdEditorGui';
 ***********************************************/
 const editorPage = () => {
    
-   const [buttonDefault, buttonClicked] = useState(true);
-
    return (
    
        <div>
@@ -32,23 +29,9 @@ const editorPage = () => {
                  <div>
 
                     {/*********************************************
-                                    Editor Tool Bar
+                                    Core Editor
                     ***********************************************/}
-                    <div className={styles.editorToolbarContainer}>
-                    
-                       <button
-                       className={styles.editorToolbarItem}
-                       onClick={() => buttonClicked((prev) => !prev)}
-                       >
-                       Markdown Mode
-                       </button>
-                    
-                    </div>
-
-                    {/*********************************************
-                                    Editor States
-                    ***********************************************/}
-                    {buttonDefault ? <MainEditor /> : <MdMainEditor />} 
+                    <MdMainEditor /> 
                  
                  </div>   
                </main>
