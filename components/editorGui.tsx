@@ -56,7 +56,6 @@ const MainEditor = () => {
         {/* Lexical Plugins */}
         <HistoryPlugin />
         <AutoFocusPlugin />
-        <MarkdownShortcutPlugin transformers={DEFAULT_TRANSFORMERS} />
       
       </div>
     </LexicalComposer>
