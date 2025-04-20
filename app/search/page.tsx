@@ -1,117 +1,85 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./search.module.css"
-import { Box, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
-import { Paper } from '@mui/material'
-import { TextField } from '@mui/material'
-import { Table } from '@mui/material'
-import { TableContainer } from '@mui/material'
+import { Box, TextField } from '@mui/material'
 import TemporaryDrawer from '@/components/sideBar'
+import { ClientSideRowModelModule, ColDef } from 'ag-grid-community'
+import { AgGridReact } from 'ag-grid-react'
+import { ModuleRegistry } from 'ag-grid-community'
+ModuleRegistry.registerModules([ClientSideRowModelModule])
 
 
-
-function tableData (
-   title: string,
-   author: string,
-   genre: string,
-   createDate: string,
-   lastModified: string,
-   uid: number
-) {
-   return {title, author, genre, createDate, lastModified, uid}
+type CarData = {
+  make: string
+  model: string
+  price: number
+  electric: boolean
 }
 
 
-const createTableRows = [
-  tableData("Summer Evil", "Remy Johan", "Horror", "2025-01-01", "2025-01-05", 123),
-  tableData("A Lost Affair", "Lucy Deville", "Romance", "2024-09-21", "2025-01-02", 298),
-  tableData("Ragnar's Quest", "Robert Green", "Fantasy", "2025-02-01", "2025-02-01", 876),
-  tableData("Simple Sayings", "Donna Lola", "Poetry", "2024-03-19", "2024-06-20", 476)
-]
+const Search = () => {
 
+    const [rowData] = useState<CarData[]>([
+        { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
+        { make: 'Ford', model: 'F-Series', price: 33850, electric: false },
+        { make: 'Toyota', model: 'Corolla', price: 29600, electric: false },
+    ])
 
-const search = () => {
-  return (
-    
-  <div className={styles.mainParent}>
-   
-   {/* This is the side bar component */}
-   <TemporaryDrawer />     
+    const [colDefs] = useState<ColDef<CarData>[]>([
+        { field: 'make' },
+        { field: 'model' },
+        { field: 'price' },
+        { field: 'electric' },
+    ])
 
- 
-  <main className={styles.main}>
-    
-    {/************************
-     !    Main Search Bar    !
-     ************************/}
-     <Box component="form" autoComplete="on">
-        <TextField 
-           id="filled-basic" 
-           label="Search" 
-           variant="filled" 
-           sx={{
-              '& .MuiInputBase-input': {
-                color: 'white',
-              },
-              '& .MuiInputLabel-root': {  
-                color: 'white'
-              },
-              '& .MuiFilledInput-underline:before': {  
-                borderBottomColor: 'white',
-              },
-              '& .MuiFilledInput-underline:after': {  
-                borderBottomColor: 'white',
-              },
-              '& .MuiInputBase-input::placeholder': {
-                color: 'white',
-                opacity: 1,  
-              },
-           }}
-        />
-    </Box>    
-
-    {/************************
-     !      Center Table     !
-     ************************/}
-     <TableContainer component={Paper} className={styles.mainTable}>
-        <Table sx={{ minWidth: 650 }}>
+    return (
         
-           <TableHead className={styles.mainTableHeaderStyle}>
-              <TableRow>
-                <TableCell align='center'>Title</TableCell>
-                <TableCell align='center'>Author</TableCell>
-                <TableCell align='center'>Genre</TableCell>
-                <TableCell align='center'>Date Created</TableCell>
-                <TableCell align='center'>Last Modified</TableCell>
-                <TableCell align='center'>Story ID</TableCell>
-              </TableRow>
-            </TableHead>
-   
-            <TableBody className={styles.mainTableRowStyle}>
-               {createTableRows.map((row) => (
-                  <TableRow
-                     key={row.title}
-                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                     <TableCell component="th" scope="row">{row.title}</TableCell>
-                     <TableCell align='center'>{row.author}</TableCell>
-                     <TableCell align='center'>{row.genre}</TableCell>
-                     <TableCell align='center'>{row.createDate}</TableCell>
-                     <TableCell align='center'>{row.lastModified}</TableCell>
-                     <TableCell align='center'>{row.uid}</TableCell>
-                 </TableRow>
-              ))}
-            </TableBody>
+        <div className={styles.mainParent}>
+          
+        {/* Sidebar */}
+          <TemporaryDrawer />
 
-        </Table>
-     </TableContainer>
-     
-   
-  </main>
-  </div>
+          <main className={styles.main}>
+            
+            {/* Search bar */}
+            <Box component="form" autoComplete="on">
+              <TextField
+                id="filled-basic"
+                label="Search"
+                variant="filled"
+                sx={{
+                  '& .MuiInputBase-input': {
+                    color: 'white',
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'white',
+                  },
+                  '& .MuiFilledInput-underline:before': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiFilledInput-underline:after': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiInputBase-input::placeholder': {
+                    color: 'white',
+                    opacity: 1,
+                  },
+                }}
+              />
+            </Box>
 
-    );
-};
+            
+            {/* AG Grid */}
+            <div
+              className="ag-theme-alpine"
+              style={{ width: '100%', height: 500}}
+            >
+              <AgGridReact<CarData> rowData={rowData} columnDefs={colDefs} />
+            </div>
+          </main>
+        </div>
+      )
+}
 
-export default search
+export default Search

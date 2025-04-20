@@ -55,6 +55,10 @@ const MdMainEditor = () => {
 
     <LexicalComposer initialConfig={initialConfig}>
         
+       
+        {/********************************************
+        !         Editor Toolbar for Styling         !
+        *********************************************/}
         <div className={styles.editorToolbarContainer}>     
         <button
             className={styles.editorToolbarItem}
@@ -64,6 +68,10 @@ const MdMainEditor = () => {
         </button>
         </div>
         
+        
+        {/*******************************************
+        !                Main Canvas                !
+        *******************************************/}
         <div className={styles.editorContainer}>
         <RichTextPlugin
           contentEditable={<ContentEditable className={styles.editorParagraph} />}
@@ -74,6 +82,11 @@ const MdMainEditor = () => {
         {/* Lexical Plugins */}
         <HistoryPlugin />
         <AutoFocusPlugin />
+        
+
+        {/*******************************************
+        !       Manage State Variables here         !
+        *******************************************/}
         {isSelected ? <MarkdownShortcutPlugin transformers={DEFAULT_TRANSFORMERS}/> : null }
 
 
