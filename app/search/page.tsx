@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import CabinIcon from '@mui/icons-material/Cabin'
 import React, { useState } from 'react'
 import styles from "./search.module.css"
 import { Box, TextField } from '@mui/material'
@@ -34,11 +36,20 @@ const Search = () => {
     ])
 
     return (
+        <div>
         
+        <Link href="/">
+        <CabinIcon className={styles.homeButton} fontSize="large"/>
+        </Link>  
+
+
+        {/* Sidebar */}
+        <div style={{ position: 'absolute', left: '0px'}}>
+        <TemporaryDrawer />
+        </div> 
+
         <div className={styles.mainParent}>
           
-        {/* Sidebar */}
-          <TemporaryDrawer />
 
           <main className={styles.main}>
             
@@ -79,6 +90,8 @@ const Search = () => {
             </div>
           </main>
         </div>
+
+      </div>
       )
 }
 

@@ -2,7 +2,6 @@
 
 
 ## Collaborative Storytelling app
-
 ![Sample_Image](./public/example.png)
 
 
@@ -10,7 +9,6 @@
 ### Editor
 - Toolbar:
     - Code Snippet language selection
-- Save editor state when toggling between modes
 
 
 ### Deployment
@@ -20,4 +18,4 @@
 
 ## Done
 - ~~Markdown Mode~~
-
+- ~~Click-to-Home on every page~~ 
