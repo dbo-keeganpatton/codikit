@@ -13,26 +13,28 @@ ModuleRegistry.registerModules([ClientSideRowModelModule])
 
 
 type CarData = {
-  make: string
-  model: string
-  price: number
-  electric: boolean
+  author: string
+  title: string
+  genre: string
+  createdDate: string
+  modifiedDate: string
 }
 
 
 const Search = () => {
 
     const [rowData] = useState<CarData[]>([
-        { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
-        { make: 'Ford', model: 'F-Series', price: 33850, electric: false },
-        { make: 'Toyota', model: 'Corolla', price: 29600, electric: false },
+        { author: 'Cillian', title: 'Steggy The Dino', genre: 'Model Y', createdDate: "2024-05-14", modifiedDate: "2024-05-14" },
+        { author: 'Mom', title: 'Vignettes of Passage', genre: 'F-Series', createdDate: "1990-11-03", modifiedDate: "1990-11-03" },
+        { author: 'Dad', title: 'A Dummmies guide to being dumb', genre: 'Corolla', createdDate: "1994-03-19", modifiedDate: "1994-03-19" },
     ])
 
     const [colDefs] = useState<ColDef<CarData>[]>([
-        { field: 'make' },
-        { field: 'model' },
-        { field: 'price' },
-        { field: 'electric' },
+        { field: 'author'},
+        { field: 'title' },
+        { field: 'genre' },
+        { field: 'createdDate' },
+        { field: 'modifiedDate' },
     ])
 
     return (
@@ -84,7 +86,7 @@ const Search = () => {
             {/* AG Grid */}
             <div
               className="ag-theme-alpine"
-              style={{ width: '100%', height: 500}}
+              style={{ width: "50vw", height: 500}}
             >
               <AgGridReact<CarData> rowData={rowData} columnDefs={colDefs} />
             </div>
