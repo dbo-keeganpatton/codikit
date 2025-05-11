@@ -9,18 +9,22 @@
 ### Editor
 - Toolbar:
     - Code Snippet language selection
-- Tile / Author / TS auto flow to BE
+- Authentication only page
+- POST request for story logs to DB
+
 
 ### Deployment
 - CICD
 ![cicd dag](./public/cicd.png)
 
 ### Backend
-- Postgres Local
-- Cloud solution research
+- RDS Cloud backend migration
+- SQLite local db for React Native version
+- SQLite to RDS connection flow
 
 
 
 ## Done
+- ~~Postgres Local~~
 - ~~Markdown Mode~~
 - ~~Click-to-Home on every page~~ 
