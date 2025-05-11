@@ -1,5 +1,5 @@
-const { Pool } = require('pg');
-require ('dotenv').config();
+import { Pool } from 'pg'
+import 'dotenv/config';
 
 const connectionPool = new Pool({
   

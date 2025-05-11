@@ -1,4 +1,4 @@
-import pool from "../../../db.js";
+import connectionPool from "../../../db.js";
 
 
 export default async function handler(req, res) {
