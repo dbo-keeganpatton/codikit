@@ -27,12 +27,20 @@ export default function Home() {
             />
             
             <p className={styles.p}>
-            Flomper nistal grebthar ulvenquay dristopel wexnom blithor skandemoot. 
-            Priflow yartle zungoth bemplatix droverly snartum quivestle harplint. Oskaber 
-            teldran whimpix grostule vathend marclen spivyok jundrelth. Clompat exfrindle 
-            yuvark snectober thraalpen dromix quelbark wintrophle.
+            A place for authors, artists, and visionaries to connect and collaborate to create
+            the next generation of storytelling. We envision a future in which there are no barriers
+            to the scope with which we can work together to weave narratives and explore new ideas. We 
+            believe in a fundemental approach to storytelling augemented by collaboration and AI.
+            
+            <br /><br />
+            Join our community to help tell the greatest story ever told..
             </p>
             
+
+            <Link href="/login">
+            <button className={styles.button}> Login </button>
+            </Link>
+   
             <Link href="/signup">
             <button className={styles.button}> Sign Up </button>
             </Link>

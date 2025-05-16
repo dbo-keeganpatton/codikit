@@ -21,8 +21,12 @@
 
 
 .main .button {
-    height: 50px;
-    width: 200px;
+    height: 4vh;
+    width: 10vw;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #444347;
 }
 
 .indexHeader {

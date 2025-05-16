@@ -83,6 +83,7 @@ export default function signup () {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
+                            className={styles.formInput}
                     />
                     <input 
                             name="password" 
@@ -90,6 +91,7 @@ export default function signup () {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
+                            className={styles.formInput}
                     />
                     <input 
                             name="confirmPassword" 
@@ -97,9 +99,10 @@ export default function signup () {
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required
+                            className={styles.formInput}
                     />
                     
-                    <button type="submit">Create Account</button>
+                    <button type="submit" className={styles.button}>Create Account</button>
                     {error && <p className={styles.error}>{error}</p>}
                 
                 </form>

@@ -1,8 +1,11 @@
 'use client'
 
+
+import Image from "next/image";
 import { FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
- 
+import styles from "./page.module.css";
+
 export default function LoginPage() {
   
 
@@ -31,10 +34,24 @@ export default function LoginPage() {
       }
      
       return (
-        <form onSubmit={handleSubmit}>
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="password" name="password" placeholder="Password" required />
-          <button type="submit">Login</button>
-        </form>
-      )
+
+        <div className={styles.mainParent}>
+                
+                <Image
+                    src="/tree.svg"
+                    fill={true}
+                    alt="A Tree"
+                    className={styles.treeImage}
+                />
+     
+                <form onSubmit={handleSubmit} className={styles.formLayout}>
+                  <input type="email" name="email" placeholder="Email" required className={styles.formInput} />
+                  <input type="password" name="password" placeholder="Password" required className={styles.formInput}/>
+                  <button type="submit" className={styles.button}>Login</button>
+                </form>
+            
+        </div>
+
+
+    )
     }

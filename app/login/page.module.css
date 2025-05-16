@@ -1,0 +1,41 @@
+/* Camel Case Only for Class Names */
+
+.main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 31%;
+    align-items: center;
+    justify-content: center;
+}
+
+.treeImage {
+    opacity: 0.1;
+    z-index: -1;
+    filter: blur(5px);
+    box-shadow: 0 200px 200px #18161b inset;
+}
+
+.formLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    gap: 15px;
+}
+
+.formInput {
+    height: 4vh;
+    width: 20vw;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.button {
+    height: 4vh;
+    width: 10vw;
+    border-radius: 5px;
+    color: white;
+    background-color: #444347;
+}
