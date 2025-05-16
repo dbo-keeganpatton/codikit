@@ -35,8 +35,8 @@ export default function LoginPage() {
      
       return (
 
-        <div className={styles.mainParent}>
-                
+        <div className={styles.main}>
+                <h1 className={styles.indexHeader}> Register </h1>               
                 <Image
                     src="/tree.svg"
                     fill={true}
