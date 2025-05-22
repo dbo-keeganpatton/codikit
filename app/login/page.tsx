@@ -5,7 +5,8 @@ import Image from "next/image";
 import { FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import styles from "./page.module.css";
-
+import CabinIcon from '@mui/icons-material/Cabin';
+import Link from "next/link";
 
 export default function LoginPage() {
   
@@ -22,7 +23,7 @@ export default function LoginPage() {
         "Let's get writing!!"
     ];
     
-    const [randomMessage, setRandomMessage] = useState(""));
+    const [randomMessage, setRandomMessage] = useState("");
 
 
     useEffect(() => {
@@ -66,6 +67,11 @@ export default function LoginPage() {
                     className={styles.treeImage}
                 />
      
+               <Link href="/">
+               <CabinIcon className={styles.homeButton} fontSize="large"/>
+               </Link>  
+     
+
                 <form onSubmit={handleSubmit} className={styles.formLayout}>
                     <input type="email" name="email" placeholder="Email" required className={styles.formInput} />
                     <input type="password" name="password" placeholder="Password" required className={styles.formInput}/>

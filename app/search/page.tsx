@@ -62,22 +62,10 @@ const Search = () => {
                 label="Search"
                 variant="filled"
                 sx={{
-                  '& .MuiInputBase-input': {
-                    color: 'white',
-                  },
-                  '& .MuiInputLabel-root': {
-                    color: 'white',
-                  },
-                  '& .MuiFilledInput-underline:before': {
-                    borderBottomColor: 'white',
-                  },
-                  '& .MuiFilledInput-underline:after': {
-                    borderBottomColor: 'white',
-                  },
-                  '& .MuiInputBase-input::placeholder': {
-                    color: 'white',
-                    opacity: 1,
-                  },
+                    bgcolor: '#2e2c31',
+                    borderRadius: '4px',
+                    borderColor: '#bacbdb'
+
                 }}
               />
             </Box>
@@ -85,7 +73,7 @@ const Search = () => {
             
             {/* AG Grid */}
             <div
-              className="ag-theme-alpine"
+              className={styles.body}
               style={{ width: "50vw", height: 500}}
             >
               <AgGridReact<CarData> rowData={rowData} columnDefs={colDefs} />
