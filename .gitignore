@@ -1,8 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 .~lock.ci_cd.odg#
+__pycache__/
 stockREADME.md
 # dependencies
+secrets/
 /node_modules
 /.pnp
 .pnp.*

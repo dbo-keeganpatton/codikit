@@ -16,7 +16,6 @@ export default function Home() {
         
         <main className={styles.main}>
             
-            
             <h1 className={styles.indexHeader}> CoRyte </h1>
             
             <Image

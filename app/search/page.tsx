@@ -1,5 +1,6 @@
 'use client'
 
+import GET from '../api/gutendex/route'
 import Link from 'next/link'
 import CabinIcon from '@mui/icons-material/Cabin'
 import React, { useState } from 'react'
@@ -69,7 +70,8 @@ const Search = () => {
                 }}
               />
             </Box>
-
+            
+            <button onClick={GET}> Fuck </button>
             
             {/* AG Grid */}
             <div
