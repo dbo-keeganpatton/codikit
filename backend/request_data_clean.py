@@ -19,7 +19,6 @@ The structure of the GutenDex API response is the following;
 }
 """
 
-
 load_dotenv()
 POSTGRES_URL = os.getenv("POSTGRES_URL")
 POSTGRES_USER = os.getenv("POSTGRES_USER")
@@ -27,22 +26,23 @@ POSTGRES_HOST = os.getenv("POSTGRES_HOST")
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
 POSTGRES_DATABASE = os.getenv("POSTGRES_DATABASE")
 POSTGRES_PORT = os.getenv("POSTGRES_PORT")
-engine = create_engine(f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DATABASE}')
+
+connection_string = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DATABASE}'
+engine = create_engine(connection_string)
 
 
-call = callGutenBergApi()
+# Assuming 'backend' is the schema namecall = callGutenBergApi()
 request_array = call["results"]
 df = pd.DataFrame(request_array)
-
-
 drop_cols_df = df.drop(['media_type', 'formats', 'id', 'translators', 'download_count', 'copyright'], axis=1)
 
 
-with engine.connect() as conn:
-
-    drop_cols_df.to_sql("codikit.backend.story", con=conn, if_exists='replace', index=False)
-
-
-
-
+with engine.connect() as connection:
+    drop_cols_df.to_sql(
+        name='story', 
+        con=connection, 
+        if_exists='replace', 
+        index=False, 
+        schema='backend'  
+    )
 
