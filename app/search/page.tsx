@@ -14,25 +14,17 @@ ModuleRegistry.registerModules([ClientSideRowModelModule])
 
 
 type CarData = {
-  author: string
-  title: string
-  genre: string
-  createdDate: string
-  modifiedDate: string
+    title: string
+    authors: string
+    
+
 }
 
 
 const Search = () => {
 
-    const [rowData] = useState<CarData[]>([
-        { author: 'Cillian', title: 'Steggy The Dino', genre: 'Model Y', createdDate: "2024-05-14", modifiedDate: "2024-05-14" },
-        { author: 'Mom', title: 'Vignettes of Passage', genre: 'F-Series', createdDate: "1990-11-03", modifiedDate: "1990-11-03" },
-        { author: 'Dad', title: 'A Dummmies guide to being dumb', genre: 'Corolla', createdDate: "1994-03-19", modifiedDate: "1994-03-19" },
-    ])
-
-    const [colDefs] = useState<ColDef<CarData>[]>([
+      const [colDefs] = useState<ColDef<CarData>[]>([
         { field: 'author'},
-        { field: 'title' },
         { field: 'genre' },
         { field: 'createdDate' },
         { field: 'modifiedDate' },

@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+*.csv
 .~lock.ci_cd.odg#
 __pycache__/
 stockREADME.md
