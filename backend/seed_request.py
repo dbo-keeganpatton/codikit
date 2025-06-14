@@ -51,12 +51,13 @@ for i in range(1, 2376):
             print(f"Processed {url} into Dataframe")
             
             # Drop bs, and coerce dtypes for Postgres
-            df = df.drop(['media_type', 'formats', 'id', 'translators', 'download_count', 'copyright'], axis=1)
+            df = df.drop(['media_type', 'id', 'translators', 'download_count', 'copyright'], axis=1)
             df['languages'] = df['languages'].apply(lambda x: str(x))
             df['title'] = df['title'].apply(lambda x: str(x))
             df['authors'] = df['authors'].apply(lambda x: str(x))
             df['summaries'] = df['summaries'].apply(lambda x: str(x))
             df['subjects'] = df['subjects'].apply(lambda x: str(x))
+            df['formats'] = df['formats'].apply(lambda x: str(x))
 
             with engine.connect() as connection:
                 df.to_sql(
