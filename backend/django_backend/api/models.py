@@ -1,6 +1,6 @@
 from django.db import models
 
-class storyModel(models.Model):
+class StoryModel(models.Model):
     storyTitle = models.TextField()
     authorList = models.JSONField()
     storySummary = models.TextField()
@@ -13,25 +13,25 @@ class storyModel(models.Model):
     textLink = models.TextField()
 
 
-class genre(models.Model):
+class Genre(models.Model):
     genre = models.CharField()
     genre_uuid = models.CharField()
 
 
-class request(models.Model):
+class Request(models.Model):
     request_id = models.CharField()
     story_id = models.CharField()
     legacy_id = models.CharField()
     user_uuid = models.CharField()
 
 
-class user(models.Model):
+class User(models.Model):
     name = models.CharField()
     password = models.CharField()
     user_uuid = models.CharField()
 
 
-class version(models.Model):
+class Version(models.Model):
     legacy_id = models.CharField()
     story_id = models.CharField()
     body = models.TextField()
