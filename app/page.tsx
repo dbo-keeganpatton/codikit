@@ -16,7 +16,7 @@ export default function Home() {
         
         <main className={styles.main}>
             
-            <h1 className={styles.indexHeader}> CoRyte </h1>
+            <h1 className={styles.indexHeader}> .draftyr </h1>
             
             <Image
                 src="/tree.svg"

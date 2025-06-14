@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CoRyte",
-  description: "App for Collaborative Storytelling",
+  title: ".Draftyr - Dream Together",
+  description: "writing together",
 };
 
 export default function RootLayout({
